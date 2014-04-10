@@ -5,13 +5,12 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
 
   def index
-    #@users = User.paginate(page: params[:page])
-    render :text => "To tentando aprender isso"
+    @users = User.paginate(page: params[:page])
+    #render :text => "To tentando aprender isso"
   end
 
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page])
   end
 
   def new
@@ -65,7 +64,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation, :idgrupo)
     end
 
     # Before filters

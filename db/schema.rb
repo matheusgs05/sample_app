@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140407192533) do
+ActiveRecord::Schema.define(version: 20140410193602) do
+
+  create_table "binaries", force: true do |t|
+    t.binary   "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "microposts", force: true do |t|
     t.string   "content"
@@ -33,6 +39,24 @@ ActiveRecord::Schema.define(version: 20140407192533) do
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
 
+  create_table "requisitometrologicos", force: true do |t|
+    t.string   "nome_do_requisito"
+    t.float    "valor_do_requisito"
+    t.string   "filename"
+    t.string   "content_type"
+    t.integer  "binary_id"
+    t.integer  "size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_groups", force: true do |t|
+    t.string   "nome"
+    t.text     "descricao"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
@@ -41,6 +65,7 @@ ActiveRecord::Schema.define(version: 20140407192533) do
     t.string   "password_digest"
     t.string   "remember_token"
     t.boolean  "admin",           default: false
+    t.integer  "idgrupo"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

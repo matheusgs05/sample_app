@@ -1,34 +1,28 @@
 <% if signed_in? %>
+<%= link_to "Função Metrologica!", reqmetro_path,
+                                class: "btn btn-large btn-primary" %>
+<%= link_to "Gestão de Recursos!", root_url,
+                                class: "btn btn-large btn-primary" %>
+<%= link_to "Comprovação Metrologica!", root_url,
+                                class: "btn btn-large btn-primary" %>
+<%= link_to "Analise e Melhoria!", root_url,
+                                class: "btn btn-large btn-primary" %>
+  <br><br><br>
   <div class="row">
+
     <aside class="span4">
       <section>
         <%= render 'shared/user_info' %>
       </section>
-      <section>
-        <%= render 'shared/stats' %>
-      </section>
-      <section>
-        <%= render 'shared/micropost_form' %>
-      </section>
     </aside>
-    <div class="span8">
-      <h3>Micropost Feed</h3>
-      <%= render 'shared/feed' %>
-    </div>
   </div>
 <% else %>
   <div class="center hero-unit">
-    <h1>Welcome to the Sample App</h1>
-
+    <h1>GESTANP</h1>
     <h2>
-      This is the home page for the
-      <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-      sample application.
+      Bem vindo ao GESTANP. Gerencie suas atividades de maneira rápida e prática
     </h2>
-
     <%= link_to "Sign up now!", signup_path,
                                 class: "btn btn-large btn-primary" %>
   </div>
-
-  <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
 <% end %>

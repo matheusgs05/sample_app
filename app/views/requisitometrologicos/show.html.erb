@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome do requisito:</strong>
+  <%= @requisitometrologico.nome_do_requisito %>
+</p>
+
+<p>
+  <strong>Valor do requisito:</strong>
+  <%= @requisitometrologico.valor_do_requisito %>
+</p>
+
+<p>
+  <strong>Filename:</strong>
+  <%= @requisitometrologico.filename %>
+</p>
+
+<p>
+  <strong>Content type:</strong>
+  <%= @requisitometrologico.content_type %>
+</p>
+
+<p>
+  <strong>Binary:</strong>
+  <%= @requisitometrologico.binary_id %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @requisitometrologico.size %>
+</p>
+
+<%= link_to 'Edit', edit_requisitometrologico_path(@requisitometrologico) %> |
+<%= link_to 'Back', requisitometrologicos_path %>

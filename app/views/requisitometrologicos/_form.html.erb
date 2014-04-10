@@ -1,0 +1,28 @@
+<%= form_for(@requisitometrologico) do |f| %>
+  <% if @requisitometrologico.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@requisitometrologico.errors.count, "error") %> prohibited this requisitometrologico from being saved:</h2>
+
+      <ul>
+      <% @requisitometrologico.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome_do_requisito %><br>
+    <%= f.text_field :nome_do_requisito %>
+  </div>
+  <div class="field">
+    <%= f.label :valor_do_requisito %><br>
+    <%= f.text_field :valor_do_requisito %>
+  </div>
+  <<div class="field">
+    <%= f.file_field :file_data %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

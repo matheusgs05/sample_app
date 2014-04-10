@@ -1,0 +1,37 @@
+<h1>Listing requisitometrologicos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome do requisito</th>
+      <th>Valor do requisito</th>
+      <th>Filename</th>
+      <th>Content type</th>
+      <th>Binary</th>
+      <th>Size</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @requisitometrologicos.each do |requisitometrologico| %>
+      <tr>
+        <td><%= requisitometrologico.nome_do_requisito %></td>
+        <td><%= requisitometrologico.valor_do_requisito %></td>
+        <td><%= requisitometrologico.filename %></td>
+        <td><%= requisitometrologico.content_type %></td>
+        <td><%= requisitometrologico.binary_id %></td>
+        <td><%= requisitometrologico.size %></td>
+        <td><%= link_to 'Show', requisitometrologico %></td>
+        <td><%= link_to 'Edit', edit_requisitometrologico_path(requisitometrologico) %></td>
+        <td><%= link_to 'Destroy', requisitometrologico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Requisitometrologico', new_requisitometrologico_path %>

@@ -1,15 +1,5 @@
 <% if signed_in? %>
-<%= link_to "Função Metrologica!", reqmetro_path,
-                                class: "btn btn-large btn-primary" %>
-<%= link_to "Gestão de Recursos!", root_url,
-                                class: "btn btn-large btn-primary" %>
-<%= link_to "Comprovação Metrologica!", root_url,
-                                class: "btn btn-large btn-primary" %>
-<%= link_to "Analise e Melhoria!", root_url,
-                                class: "btn btn-large btn-primary" %>
-  <br><br><br>
   <div class="row">
-
     <aside class="span4">
       <section>
         <%= render 'shared/user_info' %>

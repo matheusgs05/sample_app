@@ -11,7 +11,18 @@
   
   <body>
     <%= render 'layouts/header' %>
-   <div class="container">
+    <div class="container">
+      <% if signed_in? %>
+        <%= link_to "Função Metrologica!", reqmetro_path,
+                                        class: "btn btn-large btn-primary" %>
+        <%= link_to "Gestão de Recursos!", root_url,
+                                        class: "btn btn-large btn-primary" %>
+        <%= link_to "Comprovação Metrologica!", root_url,
+                                        class: "btn btn-large btn-primary" %>
+        <%= link_to "Analise e Melhoria!", root_url,
+                                        class: "btn btn-large btn-primary" %>
+        <br><br><br>
+      <% end %>
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>

@@ -26,6 +26,14 @@ git add .
 git merge -m "Comentario sobre as mudanças"
 git push "link do repositorio"
 
+-- Atualizando o repositório para o HEROKU
+
+heroku login
+heroku create
+git push heroku master
+heroku run db:migrate
+
+
 -- Atualização de Modelos
 
 Se apos a criação do modelo for necessário mudar algum campo do banco de dados, ou adicionar algum campo, use o comando:

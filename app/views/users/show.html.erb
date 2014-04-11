@@ -1,4 +1,4 @@
-<% @classe =UserGroup.find_by(id: @user.idgrupo) %>
+<% @classe = UserGroup.find_by(id: @user.idgrupo) %>
 
 <% provide(:title, @user.name) %>
 <div class="row">
@@ -6,13 +6,9 @@
     <section>
       <h1>
         <%= gravatar_for @user %>
-        
         <h1> <%= @classe.nome %> </h1>
         <%= @user.name %> 
       </h1>
     </section>
   </aside>
-  <div class="span8">
-    <%= render 'follow_form' if signed_in? %>
-  </div>
 </div>

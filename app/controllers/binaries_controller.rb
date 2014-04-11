@@ -43,7 +43,7 @@ class BinariesController < ApplicationController
     respond_to do |format|
       if @binary.update(binary_params)
         format.html { redirect_to @binary, notice: 'Binary was successfully updated.' }
-        format.json { head :no_content }
+        format.json { render :show, status: :ok, location: @binary }
       else
         format.html { render action: 'edit' }
         format.json { render json: @binary.errors, status: :unprocessable_entity }

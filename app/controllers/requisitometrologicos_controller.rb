@@ -10,8 +10,8 @@ class RequisitometrologicosController < ApplicationController
   # GET /requisitometrologicos/1
   # GET /requisitometrologicos/1.json
   def show
-    @upload = Requisitometrologico.find(params[:id])
-    @data = @upload.binary.data
+    @requisitometrologico = Requisitometrologico.find(params[:id])
+    @data = @requisitometrologico.binary.data
     send_data(@data, :type => @upload.content_type, :file_name => @upload.filename, :disposition => 'download')
   end
 

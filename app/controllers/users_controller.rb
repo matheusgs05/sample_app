@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = "Perfil Atualizado com Sucesso!"
       redirect_to @user
     else
       render 'edit'
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Bem vindo ao GESTANP!"
       redirect_to @user
     else
       render 'new'

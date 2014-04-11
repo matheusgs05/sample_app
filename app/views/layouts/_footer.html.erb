@@ -1,12 +1,14 @@
-<footer class="footer">
-  <small>
-    Sistema de Gestão da Medição, por 
-    <a href="http://www.strack.com.br/">Strack Consultoria</a>
-  </small>
-  <nav>
-    <ul>
-      <li><%= link_to "About",   about_path %></li>
-      <li><%= link_to "Contact", contact_path %></li>
-    </ul>
-  </nav>
-</footer>
+<% if signed_in? %>
+  <footer class="footer">
+    <small>
+      Sistema de Gestão da Medição, por 
+      <a href="http://www.strack.com.br/">Strack Consultoria</a>
+    </small>
+    <nav>
+      <ul>
+        <li><%= link_to "Reporte um Problema",   about_path %></li>
+        <li><%= link_to "Solicite uma Melhoria", contact_path %></li>
+      </ul>
+    </nav>
+  </footer>
+<% end %>

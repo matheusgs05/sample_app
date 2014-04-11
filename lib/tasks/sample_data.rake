@@ -15,7 +15,7 @@ def make_users
                        idgrupo: 1,
                        admin: true)
   admin2 = User.create!(name:     "Tito Rezende",
-                       email:    "titobrezende@hotmail.com.br",
+                       email:    "titobrezende@hotmail.com",
                        password: "123456",
                        password_confirmation: "123456",
                        idgrupo: 1,

@@ -44,6 +44,22 @@ Lá deve ser definido quantos usuários desejar.
 Para atualizar isso no banco de dados, rode o seguinte comando no cmd
 heroku run rake db:populate
 
+O arquivo populate já está criado
+Ele cria um grupo, chamado administradores e os seguintes usuarios:
+
+admin = User.create!(name:     "Matheus Gaya Scandiffio",
+                       email:    "matheusgs05@hotmail.com",
+                       password: "123456",
+                       password_confirmation: "123456",
+                       idgrupo: 1,
+                       admin: true)
+admin2 = User.create!(name:     "Tito Rezende",
+                       email:    "titobrezende@hotmail.com",
+                       password: "123456",
+                       password_confirmation: "123456",
+                       idgrupo: 1,
+                       admin: true)
+
 Caso queira limpar o bando de dados do heroku, rode o seguinte comando no cmd
 heroku pg:reset DATABASE
 

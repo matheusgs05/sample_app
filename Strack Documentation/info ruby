@@ -1,5 +1,18 @@
 Infos Ruby
 
+FUNCIONAMENTO DO GESTANP ATÉ O MOMENTO
+	O usuario entra em uma tela que tem somente o botão Logar.
+	Só usuários já previamente cadastrados por um administrador podem entrar.
+
+--Usuário com privilégio de Administrador
+	O usuário que tem privilégio de administrador pode criar novos grupos e usuários.
+	O administrador também é o unico que pode deletar usuarios.
+
+--Usuários comuns
+	Possuem um acesso mais limitado da aplicação
+
+
+
 Criação de projeto
 rails new "nome_projeto"
 
@@ -22,7 +35,7 @@ Para upar o projeto para o github....
 git init
 git config --global user.name "Seu nome"
 git config --global user.email seuemail
-git add .
+git add . (ou git add -A) (All)
 git merge -m "Comentario sobre as mudanças"
 git push "link do repositorio"
 

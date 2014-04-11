@@ -16,6 +16,10 @@ module SessionsHelper
   end
 
 
+  def admin_user
+    !current_user.admin?
+    redirect_to root_url
+  end
 
   def current_user
     remember_token = User.hash(cookies[:remember_token])

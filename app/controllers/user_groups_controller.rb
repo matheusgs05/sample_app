@@ -1,6 +1,7 @@
 class UserGroupsController < ApplicationController
   before_action :set_user_group, only: [:show, :edit, :update, :destroy]
 
+
   # GET /user_groups
   # GET /user_groups.json
   def index
@@ -40,6 +41,7 @@ class UserGroupsController < ApplicationController
   # PATCH/PUT /user_groups/1
   # PATCH/PUT /user_groups/1.json
   def update
+
     respond_to do |format|
       if @user_group.update(user_group_params)
         format.html { redirect_to @user_group, notice: 'User group was successfully updated.' }

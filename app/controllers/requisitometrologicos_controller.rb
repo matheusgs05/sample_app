@@ -10,9 +10,7 @@ class RequisitometrologicosController < ApplicationController
   # GET /requisitometrologicos/1
   # GET /requisitometrologicos/1.json
   def show
-    @requisitometrologico = Requisitometrologico.find(params[:id])
-    @data = @requisitometrologico.binary.data
-    send_data(@data, :type => @upload.content_type, :file_name => @upload.filename, :disposition => 'download')
+    
   end
 
   # GET /requisitometrologicos/new
@@ -72,6 +70,6 @@ class RequisitometrologicosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def requisitometrologico_params
-      params.require(:requisitometrologico).permit(:nome_do_requisito, :valor_do_requisito, :file_data)
+      params.require(:requisitometrologico).permit(:nome_do_requisito, :valor_do_requisito)
     end
 end

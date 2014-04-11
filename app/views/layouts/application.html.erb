@@ -13,15 +13,54 @@
     <%= render 'layouts/header' %>
     <div class="container">
       <% if signed_in? %>
-        <%= link_to "Função Metrologica!", reqmetro_path,
-                                        class: "btn btn-large btn-primary" %>
-        <%= link_to "Gestão de Recursos!", root_url,
-                                        class: "btn btn-large btn-primary" %>
-        <%= link_to "Comprovação Metrologica!", root_url,
-                                        class: "btn btn-large btn-primary" %>
-        <%= link_to "Analise e Melhoria!", root_url,
-                                        class: "btn btn-large btn-primary" %>
-        <br><br><br>
+        <ul class="nav nav-pills">
+          <li id="fat-menu" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Controle Metrológico
+            <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <% if current_user.admin? %>
+                <li><%= link_to "Usuários", signup_path %></li>
+                <li><%= link_to "Grupo Usuários", user_groups_url %></li>
+              <% end %>
+              <li><%= link_to "Requisitos Metrológicos", reqmetro_url %></li>
+            </ul>
+          </li>
+
+          <li id="fat-menu" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Gestão de Recursos
+            <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Recursos Humanos", users_path %></li>
+              <li><%= link_to "Gestão de Documentos", root_url %></li>
+              <li><%= link_to "Recursos Materiais", root_url %></li>
+            </ul>
+          </li>
+          
+          <li id="fat-menu" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Comprovação Metrológica
+            <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Em construção...", root_url %></li>
+            </ul>
+          </li>
+          <li id="fat-menu" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Análise e Melhoria
+            <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Grupo Usuarios", root_url %></li>
+              <li><%= link_to "Requisitos", reqmetro_path %></li>
+            </ul>
+          </li>
+          <br><br><br>
+        </ul>
       <% end %>
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>

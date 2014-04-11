@@ -1,8 +1,8 @@
-<% @classe =UserGroup.find_by(id: current_user.idgrupo) %>
+<% @classe = UserGroup.find_by(id: current_user.idgrupo) %>
 
 <%= link_to gravatar_for(current_user, size: 52), current_user %>
 <h1>
-  	<h1> <%= @classe.nome %> </h1>
+        <h1> <%= @classe.nome %> </h1>
         
         <%= current_user.name %> 
 </h1>

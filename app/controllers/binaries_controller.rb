@@ -1,5 +1,6 @@
 class BinariesController < ApplicationController
   before_action :set_binary, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /binaries
   # GET /binaries.json

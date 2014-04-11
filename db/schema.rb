@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140410193602) do
+ActiveRecord::Schema.define(version: 20140411172553) do
 
   create_table "binaries", force: true do |t|
     t.binary   "data"
@@ -43,6 +43,17 @@ ActiveRecord::Schema.define(version: 20140410193602) do
     t.string   "nome_do_requisito"
     t.float    "valor_do_requisito"
     t.string   "filename"
+    t.string   "content_type"
+    t.integer  "binary_id"
+    t.integer  "size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "uploads", force: true do |t|
+    t.string   "arquivo"
+    t.integer  "id_uploader"
+    t.string   "file_name"
     t.string   "content_type"
     t.integer  "binary_id"
     t.integer  "size"

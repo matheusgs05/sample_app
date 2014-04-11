@@ -2,24 +2,26 @@
   <% if @user_group.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user_group.errors.count, "error") %> prohibited this user_group from being saved:</h2>
-
       <ul>
       <% @user_group.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li>
+          <%= msg %>
+        </li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :nome %><br>
+    <%= f.label :nome %>
     <%= f.text_field :nome %>
   </div>
   <div class="field">
-    <%= f.label :descricao %><br>
+    <%= f.label :descricao %>
     <%= f.text_area :descricao %>
-  </div>
+  </div> 
+  <br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Criar Grupo" %>
   </div>
 <% end %>

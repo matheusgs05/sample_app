@@ -1,4 +1,6 @@
 SampleApp::Application.routes.draw do
+  resources :uploads
+
   resources :binaries
 
   resources :requisitometrologicos
@@ -18,8 +20,8 @@ SampleApp::Application.routes.draw do
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
   match '/help',    to: 'static_pages#help',    via: 'get'
-  match '/about',   to: 'static_pages#about',   via: 'get'
-  match '/contact', to: 'static_pages#contact', via: 'get'
+  match '/reporte_problema',   to: 'static_pages#about',   via: 'get'
+  match '/solicite_melhoria', to: 'static_pages#contact', via: 'get'
   match '/reqmetro',  to: 'requisitometrologicos#index',            via: 'get'
 
   get "static_pages/home"

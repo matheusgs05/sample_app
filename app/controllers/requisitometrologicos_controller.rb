@@ -1,5 +1,7 @@
 class RequisitometrologicosController < ApplicationController
   before_action :set_requisitometrologico, only: [:show, :edit, :update, :destroy]
+  before_action :signed_in_user,
+                only: [:index, :edit, :update, :destroy, :new, :show, :create]
 
   # GET /requisitometrologicos
   # GET /requisitometrologicos.json

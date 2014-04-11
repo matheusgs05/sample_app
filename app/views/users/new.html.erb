@@ -1,7 +1,7 @@
 <% @user_groups = UserGroup.all %>
 
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+<h1>Novo Usuário</h1>
 
 <div class="row">
   <div class="span6 offset3">
@@ -14,14 +14,14 @@
       <%= f.label :email %>
       <%= f.text_field :email %>
 
-      <%= f.label :password %>
+      <%= f.label :Senha %>
       <%= f.password_field :password %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.label :password_confirmation, "Confirmação de Senha" %>
       <%= f.password_field :password_confirmation %>
 
       <div class="field">
-        <%= f.label :id_grupo %><br>
+        <%= f.label :Profissão %>
         <!--<%= f.number_field :idgrupo %> -->
         <%= f.select :idgrupo,  options_from_collection_for_select(@user_groups, 'id', 'nome') %> 
       </div>

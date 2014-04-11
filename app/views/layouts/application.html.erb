@@ -21,7 +21,7 @@
             </a>
             <ul class="dropdown-menu">
               <% if current_user.admin? %>
-                <li><%= link_to "Usuários", signup_path %></li>
+                <li><%= link_to "Cadastro de Usuários", signup_path %></li>
                 <li><%= link_to "Grupo Usuários", user_groups_url %></li>
               <% end %>
               <li><%= link_to "Requisitos Metrológicos", reqmetro_url %></li>
@@ -34,8 +34,8 @@
             <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to "Recursos Humanos", users_path %></li>
-              <li><%= link_to "Gestão de Documentos", root_url %></li>
+              <li><%= link_to "Usuários Cadastrados", users_path %></li>
+              <li><%= link_to "Gestão de Documentos", uploads_path %></li>
               <li><%= link_to "Recursos Materiais", root_url %></li>
             </ul>
           </li>
@@ -55,8 +55,8 @@
             <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to "Grupo Usuarios", root_url %></li>
-              <li><%= link_to "Requisitos", reqmetro_path %></li>
+              <li><%= link_to " --- ", root_url %></li>
+              <li><%= link_to " --- ", root_url %></li>
             </ul>
           </li>
           <br><br><br>

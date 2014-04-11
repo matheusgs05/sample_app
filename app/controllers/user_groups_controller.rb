@@ -1,6 +1,8 @@
 class UserGroupsController < ApplicationController
   before_action :set_user_group, only: [:show, :edit, :update, :destroy]
 
+  before_action :signed_in_user,
+                only: [:index, :edit, :update, :destroy, :new, :show, :create]
 
   # GET /user_groups
   # GET /user_groups.json

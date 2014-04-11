@@ -1,17 +1,5 @@
 Infos Ruby
 
-FUNCIONAMENTO DO GESTANP ATÉ O MOMENTO
-	O usuario entra em uma tela que tem somente o botão Logar.
-	Só usuários já previamente cadastrados por um administrador podem entrar.
-
---Usuário com privilégio de Administrador
-	O usuário que tem privilégio de administrador pode criar novos grupos e usuários.
-	O administrador também é o unico que pode deletar usuarios.
-
---Usuários comuns
-	Possuem um acesso mais limitado da aplicação
-
-
 
 Criação de projeto
 rails new "nome_projeto"
@@ -45,6 +33,19 @@ heroku login
 heroku create
 git push heroku master
 heroku run db:migrate
+
+****IMPORTANTE****
+
+Quando vc passa o server para o heroku, o banco está vazio.
+Como vc precisa de pelo menos 1 usuario como administrador para entrar e criar usuarios, você deve rodar um arquivo para gerar usuario.
+O arquivo está na seguinte paste: sample_app -> lib -> tasks -> sample_data.rake
+Lá deve ser definido quantos usuários desejar.
+
+Para atualizar isso no banco de dados, rode o seguinte comando no cmd
+heroku run rake db:populate
+
+Caso queira limpar o bando de dados do heroku, rode o seguinte comando no cmd
+heroku pg:reset DATABASE
 
 
 -- Atualização de Modelos

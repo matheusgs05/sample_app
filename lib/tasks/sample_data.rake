@@ -6,7 +6,7 @@ namespace :db do
 end
 
 def make_users
-  grupo = UserGroups.create!(nome: "Administrador",
+  grupo = UserGroup.create!(nome: "Administrador",
                               descricao: "Administrar")
   admin = User.create!(name:     "Matheus Gaya Scandiffio",
                        email:    "matheusgs05@hotmail.com",

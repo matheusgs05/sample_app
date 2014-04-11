@@ -32,7 +32,7 @@ git push "link do repositorio"
 heroku login
 heroku create
 git push heroku master
-heroku run db:migrate
+heroku run rake db:migrate
 
 ****IMPORTANTE****
 
